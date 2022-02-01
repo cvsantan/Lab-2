@@ -1,3 +1,3 @@
-# step response PLots!
+# Step Response Plots!
 
-![This graph contains our values at Kp = 0.835] (KP_0.835.png)
+![This graph contains step responses] (KP_0.835.png)
