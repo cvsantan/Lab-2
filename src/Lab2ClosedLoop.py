@@ -1,8 +1,9 @@
 '''!
 @file       Lab2ClosedLoop.py
-@brief      
-@details    
-@author     Jakob Frabosilio
+@brief      Class for creating a proportional controller
+@details    Class that initializes a proportional closed-loop controller.
+            Contains methods to update actuation value
+@author     Jakob Frabosilio, Ayden Carbaugh, Cesar Santana
 @date       01/11/2022
 '''
 
@@ -28,9 +29,6 @@ class ClosedLoop:
         ## List for reference position value storage
         self.refVals = []
         
-        ## pp
-        self.sendVals = []
-        
         
     def update(self,wRef,wCalc,time=0,saveData=False):
         '''! Updates the current duty cycle value for a motor.
@@ -55,7 +53,6 @@ class ClosedLoop:
              
         return self.lAct
     
-    
     def setKp(self,Kp):
         '''! Sets the value of Kp.
         @param Jp       The desired value of Kp
@@ -72,23 +69,6 @@ class ClosedLoop:
     def clearResults(self):
         '''!
         '''
-        self.sendVals = []
         self.timeVals = []
         self.measVals = []
         self.refVals = []
-    
-    def printResults(self,yVal='measured'):
-        '''!
-        @param yVal
-        @return
-        '''
-        if yVal == 'measured':
-            for n in range(len(self.timeVals)):
-                self.sendVals.append(self.timeVals[n])
-                self.sendVals.append(self.measVals[n])
-        elif yVal == 'reference':
-            for n in range(len(self.timeVals)):
-                self.sendVals.append(self.timeVals[n])
-                self.sendVals.append(self.refVals[n])
-        return self.sendVals
-        self.sendVals = []
