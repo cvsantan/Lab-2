@@ -82,7 +82,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a86aca62c0a0ba275c2eeb7f8b5ca8fcb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lab1_motor_driver_1_1_motor_driver.html#a86aca62c0a0ba275c2eeb7f8b5ca8fcb">__init__</a> (self, en_pin, in1pin, in2pin, timer)</td></tr>
-<tr class="memdesc:a86aca62c0a0ba275c2eeb7f8b5ca8fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a motor driver by initializing GPIO pins and turning the motor off for safety.  <a href="class_lab1_motor_driver_1_1_motor_driver.html#a86aca62c0a0ba275c2eeb7f8b5ca8fcb">More...</a><br /></td></tr>
+<tr class="memdesc:a86aca62c0a0ba275c2eeb7f8b5ca8fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes motor object given I/O pins and a timer.  <a href="class_lab1_motor_driver_1_1_motor_driver.html#a86aca62c0a0ba275c2eeb7f8b5ca8fcb">More...</a><br /></td></tr>
 <tr class="separator:a86aca62c0a0ba275c2eeb7f8b5ca8fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0aa13b09b9e14566cc10299f0a5a390d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lab1_motor_driver_1_1_motor_driver.html#a0aa13b09b9e14566cc10299f0a5a390d">set_duty_cycle</a> (self, level)</td></tr>
 <tr class="memdesc:a0aa13b09b9e14566cc10299f0a5a390d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the duty cycle of the motor to the given level.  <a href="class_lab1_motor_driver_1_1_motor_driver.html#a0aa13b09b9e14566cc10299f0a5a390d">More...</a><br /></td></tr>
@@ -156,15 +156,13 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates a motor driver by initializing GPIO pins and turning the motor off for safety. </p>
+<p>Initializes motor object given I/O pins and a timer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">en_pin</td><td>A pyb.Pin object for the EN/OCD "toggle" pin </td></tr>
-    <tr><td class="paramname">in1pin</td><td>A pyb.Pin object for the </td></tr>
-    <tr><td class="paramname">in2pin</td><td><br  />
- </td></tr>
-    <tr><td class="paramname">timer</td><td><br  />
- </td></tr>
+    <tr><td class="paramname">in1pin</td><td>A pyb.Pin object for the IN1 pin (+) </td></tr>
+    <tr><td class="paramname">in2pin</td><td>A pyb.Pin object for the IN2 pin (-) </td></tr>
+    <tr><td class="paramname">timer</td><td>The number of the timer to be used by the motor </td></tr>
   </table>
   </dd>
 </dl>
@@ -201,7 +199,7 @@ Public Attributes</h2></td></tr>
 <p>Sets the duty cycle of the motor to the given level. </p>
 <p >Positive values cause torque in one direction, negative values cause torque in opposite direction. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">level</td><td></td></tr>
+    <tr><td class="paramname">level</td><td>Duty cycle value between -100 and 100 </td></tr>
   </table>
   </dd>
 </dl>

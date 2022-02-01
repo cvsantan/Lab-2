@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inittime_0',['initTime',['../main_8py.html#a1eb846a19d2fb4a2dd52b06531da303d',1,'main']]]
+  ['kp_0',['Kp',['../class_lab2_closed_loop_1_1_closed_loop.html#a2eafa50ede01c7f9d28a6808ecdf2f80',1,'Lab2ClosedLoop::ClosedLoop']]]
 ];

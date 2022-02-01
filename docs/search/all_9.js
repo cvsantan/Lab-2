@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['plottime_0',['plotTime',['../main_8py.html#a7ae7f3199200bf53edf56f5814d01de5',1,'main']]],
-  ['printresults_1',['printResults',['../class_lab2_closed_loop_1_1_closed_loop.html#a3d90d77290b972487c1f65889ecd8b60',1,'Lab2ClosedLoop::ClosedLoop']]]
+  ['refpos_0',['refPos',['../main_8py.html#a297e09953aee19d22e6191150925975f',1,'main']]],
+  ['refvals_1',['refVals',['../class_lab2_closed_loop_1_1_closed_loop.html#a03ca73383ec521b0d320691fe5bc14e8',1,'Lab2ClosedLoop::ClosedLoop']]]
 ];
