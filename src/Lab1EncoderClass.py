@@ -1,8 +1,11 @@
 '''!
 @file       Lab1EncoderClass.py
-@brief      
-@details    
-@author     Jakob Frabosilio
+@brief      Class for reading from an encoder
+@details    Class that initializes an encoder given input pins and a timer.
+            Contains methods to zero and update (read from) the encoder.
+            Configured to convert from ticks to degrees using 16:1 ratio,
+            256 CPR optical encoder readings.
+@author     Jakob Frabosilio, Ayden Carbaugh, Cesar Santana
 @date       01/11/2022
 '''
 
