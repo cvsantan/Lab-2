@@ -24,14 +24,23 @@ class MotorDriver:
         @param timer      
         '''
         
+        ##
         self.en_pin = pyb.Pin(en_pin, pyb.Pin.PULL_UP)
+        ##
         self.in1pin = pyb.Pin(in1pin, pyb.Pin.OUT_PP)
+        ##
         self.in2pin = pyb.Pin(in2pin, pyb.Pin.OUT_PP)
+        ##
         self.tim = pyb.Timer(timer,freq = 20000)
+        ##
         self.mPos = self.tim.channel(1, pyb.Timer.PWM, pin=self.in1pin)
+        ##
         self.mNeg = self.tim.channel(2, pyb.Timer.PWM, pin=self.in2pin)
+        ##
         self.en_pin.high()
+        ##
         self.mPos.pulse_width_percent(0)
+        ##
         self.mNeg.pulse_width_percent(0)
         
         
@@ -39,7 +48,7 @@ class MotorDriver:
         '''!
         Sets the duty cycle of the motor to the given level. Positive values cause
         torque in one direction, negative values cause torque in opposite direction.
-        @param level
+        @param level The desired duty cycle for the motor
         '''
         
         if level < 0 and level >= -100:

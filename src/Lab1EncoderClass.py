@@ -20,16 +20,25 @@ class EncoderClass:
         @param in2pin         A pyb.Pin object for the encoder channel B
         @param timer          The number of the timer to be used by the encoder
         '''
-
+        ##
         self.period = 65535
+        ##
         self.tim = pyb.Timer(timer, prescaler=0, period=self.period)
+        ##
         self.tch1 = self.tim.channel(1, pyb.Timer.ENC_A, pin=in1pin)
+        ##
         self.tch2 = self.tim.channel(2, pyb.Timer.ENC_B, pin=in2pin)
+        ##
         self.pos = 0
+        ##
         self.lastpos = 0
+        ##
         self.count = 0
+        ##
         self.lastCount = 0
+        ##
         self.delta = 0
+        ##
         self.lastDelta = 0
 
     
