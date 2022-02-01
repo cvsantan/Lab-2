@@ -1,8 +1,11 @@
 '''!
 @file       Lab1EncoderClass.py
-@brief      
-@details    
-@author     Jakob Frabosilio
+@brief      Class for reading from an encoder
+@details    Class that initializes an encoder given input pins and a timer.
+            Contains methods to zero and update (read from) the encoder.
+            Configured to convert from ticks to degrees using 16:1 ratio,
+            256 CPR optical encoder readings.
+@author     Jakob Frabosilio, Ayden Carbaugh, Cesar Santana
 @date       01/11/2022
 '''
 
@@ -20,25 +23,16 @@ class EncoderClass:
         @param in2pin         A pyb.Pin object for the encoder channel B
         @param timer          The number of the timer to be used by the encoder
         '''
-        ##
+
         self.period = 65535
-        ##
         self.tim = pyb.Timer(timer, prescaler=0, period=self.period)
-        ##
         self.tch1 = self.tim.channel(1, pyb.Timer.ENC_A, pin=in1pin)
-        ##
         self.tch2 = self.tim.channel(2, pyb.Timer.ENC_B, pin=in2pin)
-        ##
         self.pos = 0
-        ##
         self.lastpos = 0
-        ##
         self.count = 0
-        ##
         self.lastCount = 0
-        ##
         self.delta = 0
-        ##
         self.lastDelta = 0
 
     

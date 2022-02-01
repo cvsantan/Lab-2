@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['sendvals_0',['sendVals',['../class_lab2_closed_loop_1_1_closed_loop.html#a2dd37ed8de905297a2888f59fb64f75f',1,'Lab2ClosedLoop::ClosedLoop']]],
-  ['setduty_1',['setDuty',['../main_8py.html#a927edb73cedefac40d11314c7c7ed992',1,'main']]],
-  ['splitstrings_2',['splitStrings',['../_lab2_front_end_8py.html#a8953d05ad5166665d5b025971af5cead',1,'Lab2FrontEnd']]],
-  ['state_3',['state',['../main_8py.html#a930442dd832ba9fe94227723c47f6653',1,'main']]],
-  ['steptime_4',['stepTime',['../main_8py.html#aab0c300df019ade13c234136063853ad',1,'main']]],
-  ['strippedstring_5',['strippedString',['../_lab2_front_end_8py.html#ae6b2622ed44c7dac8a58f8d3f440c39a',1,'Lab2FrontEnd']]]
+  ['testencoder_0',['testEncoder',['../main_8py.html#ad0a286ef0d0ac1575f8f5a4b3ae24bba',1,'main']]],
+  ['testloop_1',['testLoop',['../main_8py.html#a404e2ece96c1384e8afc766c19ff86be',1,'main']]],
+  ['testmotor_2',['testMotor',['../main_8py.html#afa869a290627d5901c06c297ac927aae',1,'main']]],
+  ['timevals_3',['timeVals',['../class_lab2_closed_loop_1_1_closed_loop.html#a4b228cb5616656d4ded000dc30eb4ff2',1,'Lab2ClosedLoop::ClosedLoop']]]
 ];

@@ -30,9 +30,6 @@ stepTime = 0
 ## Beginning time for each encoder read loop
 encTime = 0
 
-## Start time of program (used for plotting)
-initTime = utime.ticks_ms()
-
 ## Number of times step response has been called (dictates set position)
 loopCount = 1
 
@@ -51,24 +48,15 @@ state = 0
 ## Duty cycle variable
 setDuty = 0
 
+
 if __name__ == "__main__":
-    print('name')
     while True:
         try:
 
 # ----- WAITING STATE -----
             if state == 0:
-#                 if utime.ticks_diff(utime.ticks_ms(), initTime) > 2000:
-#                     state = 1
-#                     stepTime = utime.ticks_ms()            # Starts step response loop and encoder loop 'timers'
-#                     encTime = utime.ticks_ms()
-#                     state = 1
-#                     refPos = 360*loopCount                 # Sets position to increments of 360 degrees (1 rev) for each step response
-#                     initTime = utime.ticks_ms()
-
                 if myUSB.any():                                # Checks if any chars have been sent over USB
                     userInput = myUSB.read(1).decode()         # If so, reads char and assigns it to variable
-                    print(userInput)
                     
                     # Input G or g to start data collection
                     if userInput == 'g' or userInput == 'G':
@@ -76,12 +64,8 @@ if __name__ == "__main__":
                         encTime = utime.ticks_ms()
                         state = 1
                         refPos = 360*loopCount                 # Sets position to increments of 360 degrees (1 rev) for each step response
-                        myUSB.write('Step response activate.'.encode())
-                    
-                    # Input S or s to return data to serial
-                    elif userInput == 's' or userInput == 'S':
-                        testMotor.set_duty_cycle(0)
-                        state = 2
+                                                               # (currently stays at 360, doesn't increment)
+                        testEncoder.zero()
                         
                     # Input X or x to enter Kp input state
                     elif userInput == 'x' or userInput == 'X':
@@ -92,20 +76,18 @@ if __name__ == "__main__":
 # ----- STEP RESPONSE STATE -----
 
             elif state == 1:
-                if utime.ticks_diff(utime.ticks_ms(), stepTime) < 1500:
+                if utime.ticks_diff(utime.ticks_ms(), stepTime) < 750:                      # 
                     if utime.ticks_diff(utime.ticks_ms(), encTime) >= 10:
                         actPos = testEncoder.update()                                       # Queries actual position by updating encoder
-                        plotTime = utime.ticks_ms()-initTime                                 # Calculates time since intitialization for plotting
+                        plotTime = utime.ticks_diff(utime.ticks_ms(), stepTime)             # Calculates time since intitialization for plotting
                         setDuty = testLoop.update(refPos, actPos, plotTime, saveData=True)  # Uses closed-loop controller to set duty cycle
                         testMotor.set_duty_cycle(setDuty)                                   # Sets motor duty to closed-loop controller set
-#                         print(actPos, ", ", refPos)
-#                         print(setDuty)
                         encTime = utime.ticks_ms()                                          # Resets encoder loop time
                 else:
-                    loopCount += 1
+                    # loopCount += 1
                     testMotor.set_duty_cycle(0)
+                    endTime = utime.ticks_ms()
                     state = 2
-
                         
             elif state == 2: # data send state
                 for times in testLoop.timeVals:
@@ -119,12 +101,10 @@ if __name__ == "__main__":
                 for meas in testLoop.measVals:
                     myUSB.write(str(meas).encode())
                     myUSB.write(','.encode())
+                myUSB.write('|'.encode())
+                myUSB.write(str(testLoop.Kp).encode())
                 myUSB.write('\n'.encode())
-                testLoop.timeVals = []
-                testLoop.measVals = []
-                testLoop.refVals = []
-                testLoop.sendVals = []
-                initTime = utime.ticks_ms()
+                testLoop.clearResults()
                 state = 0
                 
             elif state == 3: # KP set state

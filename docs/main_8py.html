@@ -100,10 +100,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main.stepTime</b> = 0<
 int&#160;</td><td class="memItemRight" valign="bottom"><b>main.encTime</b> = 0</td></tr>
 <tr class="memdesc:a89c5df291bddcec53d0d8e105c14f7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Beginning time for each encoder read loop. <br /></td></tr>
 <tr class="separator:a89c5df291bddcec53d0d8e105c14f7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1eb846a19d2fb4a2dd52b06531da303d"><td class="memItemLeft" align="right" valign="top"><a id="a1eb846a19d2fb4a2dd52b06531da303d" name="a1eb846a19d2fb4a2dd52b06531da303d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>main.initTime</b> = utime.ticks_ms()</td></tr>
-<tr class="memdesc:a1eb846a19d2fb4a2dd52b06531da303d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start time of program (used for plotting) <br /></td></tr>
-<tr class="separator:a1eb846a19d2fb4a2dd52b06531da303d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad87db324881a893a6fcbd8d228aca17f"><td class="memItemLeft" align="right" valign="top"><a id="ad87db324881a893a6fcbd8d228aca17f" name="ad87db324881a893a6fcbd8d228aca17f"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>main.loopCount</b> = 1</td></tr>
 <tr class="memdesc:ad87db324881a893a6fcbd8d228aca17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of times step response has been called (dictates set position) <br /></td></tr>
@@ -131,18 +127,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main.setDuty</b> = 0</
 <tr class="memitem:a00369eda9044131b787cd65ce202f6dc"><td class="memItemLeft" align="right" valign="top"><a id="a00369eda9044131b787cd65ce202f6dc" name="a00369eda9044131b787cd65ce202f6dc"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>main.userInput</b> = myUSB.read(1).decode()</td></tr>
 <tr class="separator:a00369eda9044131b787cd65ce202f6dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a385a6377286836b22c8e4f43c7918a2a"><td class="memItemLeft" align="right" valign="top"><a id="a385a6377286836b22c8e4f43c7918a2a" name="a385a6377286836b22c8e4f43c7918a2a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>main.timeVals</b></td></tr>
-<tr class="separator:a385a6377286836b22c8e4f43c7918a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cbf49eaefc0be5f842429fc5699cfb6"><td class="memItemLeft" align="right" valign="top"><a id="a5cbf49eaefc0be5f842429fc5699cfb6" name="a5cbf49eaefc0be5f842429fc5699cfb6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>main.measVals</b></td></tr>
-<tr class="separator:a5cbf49eaefc0be5f842429fc5699cfb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3da951120f4e2f07126aa909ab794203"><td class="memItemLeft" align="right" valign="top"><a id="a3da951120f4e2f07126aa909ab794203" name="a3da951120f4e2f07126aa909ab794203"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>main.refVals</b></td></tr>
-<tr class="separator:a3da951120f4e2f07126aa909ab794203"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac879b40af923b8d427473076d03cd2cc"><td class="memItemLeft" align="right" valign="top"><a id="ac879b40af923b8d427473076d03cd2cc" name="ac879b40af923b8d427473076d03cd2cc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>main.sendVals</b></td></tr>
-<tr class="separator:ac879b40af923b8d427473076d03cd2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a717e0ecffadf45fbd3947015e23e5527"><td class="memItemLeft" align="right" valign="top"><a id="a717e0ecffadf45fbd3947015e23e5527" name="a717e0ecffadf45fbd3947015e23e5527"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>main.endTime</b> = utime.ticks_ms()</td></tr>
+<tr class="separator:a717e0ecffadf45fbd3947015e23e5527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><br  />
