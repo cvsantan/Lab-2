@@ -55,7 +55,7 @@ class ClosedLoop:
     
     def setKp(self,Kp):
         '''! Sets the value of Kp.
-        @param Jp       The desired value of Kp
+        @param Kp       The desired value of Kp
         '''
         self.Kp = Kp
         
@@ -67,7 +67,7 @@ class ClosedLoop:
         return self.Kp
     
     def clearResults(self):
-        '''!
+        '''! Clears the values of timeVals, measVals, and refVals
         '''
         self.timeVals = []
         self.measVals = []
