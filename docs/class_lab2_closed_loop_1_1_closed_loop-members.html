@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">LAB_2
    </div>
-   <div id="projectbrief">Closed loop control for the position of the motor</div>
+   <div id="projectbrief">Closed Loop Control</div>
   </td>
  </tr>
  </tbody>
@@ -48,6 +52,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_lab2_closed_loop_1_1_closed_loop.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,11 +83,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>Lab2ClosedLoop</b></li><li class="navelem"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html">ClosedLoop</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">Lab2ClosedLoop.ClosedLoop Member List</div></div>
 </div><!--header-->
@@ -75,7 +91,7 @@ $(function() {
 <p>This is the complete list of members for <a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html">Lab2ClosedLoop.ClosedLoop</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html#a5c81c4389b8b8509e87fcb2e27c65299">__init__</a>(self, Kp)</td><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html">Lab2ClosedLoop.ClosedLoop</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>clearResults</b>(self) (defined in <a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html">Lab2ClosedLoop.ClosedLoop</a>)</td><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html">Lab2ClosedLoop.ClosedLoop</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html#a9956b3705aa6aec7c317ed0c7f737fae">clearResults</a>(self)</td><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html">Lab2ClosedLoop.ClosedLoop</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html#a2fa794499b58d377e4cf5caf3316d8fb">getKp</a>(self)</td><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html">Lab2ClosedLoop.ClosedLoop</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html#a2eafa50ede01c7f9d28a6808ecdf2f80">Kp</a></td><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html">Lab2ClosedLoop.ClosedLoop</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html#a94c607ebe3b51f7c19b103071054e3e6">lAct</a></td><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html">Lab2ClosedLoop.ClosedLoop</a></td><td class="entry"></td></tr>
@@ -85,9 +101,12 @@ $(function() {
   <tr class="even"><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html#a4b228cb5616656d4ded000dc30eb4ff2">timeVals</a></td><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html">Lab2ClosedLoop.ClosedLoop</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html#a9f576eaebcc23aa69bd8b60293fbf94f">update</a>(self, wRef, wCalc, time=0, saveData=False)</td><td class="entry"><a class="el" href="class_lab2_closed_loop_1_1_closed_loop.html">Lab2ClosedLoop.ClosedLoop</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
 </body>
 </html>
